@@ -72,7 +72,7 @@ const handleSubmit = async (e) => {
     const messageDiv = document.getElementById(uniqueId) //Selecting the bot's div using specific div ID
     loader(messageDiv) //Stating the loader 
 
-    const response = await fetch('http://localhost:5000', {
+    const response = await fetch('http://localhost:5000/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
