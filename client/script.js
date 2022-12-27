@@ -85,13 +85,20 @@ const handleSubmit = async (e) => {
     clearInterval(loadInterval)
     messageDiv.innerHTML = " "
 
+    // console.log(response)
+
     if (response.ok) {
         const data = await response.json();
         // console.log(data)
         const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
 
         typeText(messageDiv, parsedData)
-    } else {
+    }
+    
+    else if(response.status == 429){
+        messageDiv.innerHTML = "Too many attempts ☹️, please wait for 5 mins before trying again."
+    }
+    else {
         const err = await response.text()
         messageDiv.innerHTML = "Something went wrong"
         console.log(err)
