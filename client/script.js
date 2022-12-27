@@ -96,7 +96,7 @@ const handleSubmit = async (e) => {
     }
     
     else if(response.status == 429){
-        messageDiv.innerHTML = "Too many attempts ☹️, please wait for 5 mins before trying again."
+        messageDiv.innerHTML = "Too many attempts ☹️, please wait for a day before trying again."
     }
     else {
         const err = await response.text()

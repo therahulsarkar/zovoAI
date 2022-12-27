@@ -315,5 +315,8 @@ nav h1{
     height: 45vh;
   }
 
-
+  #app {
+    width: 100vw;
+    height: 95vh;
+  }
 }

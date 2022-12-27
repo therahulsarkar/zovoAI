@@ -16,8 +16,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const limiter = rateLimit({
-	windowMs: 5 * 60 * 1000, // 5 minutes
-	max: 5, // Limit each IP to 1 requests per `window` (here, per 5 minutes)
+	windowMs: 24 * 60 * 60 * 1000, // 1 Day
+	max: 7, // Limit each IP to 1 requests per `window` (here, per 5 minutes)
 	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
   handler: function (req, res, /*next*/){
